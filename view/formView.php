@@ -13,7 +13,7 @@
     </div>
     
   </div>   
-    <button type="submit" class="btn btn-primary">Envoyer</button>
+    <button type="submit" name = "submit"class="btn btn-primary">Envoyer</button>
   </fieldset>
   
   </form>
