@@ -7,11 +7,11 @@
         </tr>
     </thead>
     <tbody>
-        <?php for ($i = 0; $i < 6; $i++) { ?>
+        <?php foreach ($tab as $row) { ?>
             <tr class="table-light">
-                <td>2021-06-01 16:56:49</th>
-                <td>Julie</td>
-                <td>Bonjour!En quoi puis-je vous aider?</td>
+                <td><?php echo $row["date"]?></th>
+                <td><?php echo $row["pseudo"] ?></td>
+                <td><?php echo $row["content"] ?></td>
 
             </tr>
         <?php } ?>
