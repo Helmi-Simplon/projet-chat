@@ -2,18 +2,18 @@
 <fieldset>
     
     <div class="row">
-    <div class="col form-group">
-      
-      <input type="text" class="form-control" id="pseudo" aria-describedby="pseudo" placeholder="Enter pseudo" >
+    <div class="col-4 form-group">
+    <label for="pseudo" class="form-label mt-4" hidden>Pseudo</label>
+      <input type="text" name="pseudo" class="form-control" id="pseudo" aria-describedby="pseudo" placeholder="Entrer votre pseudo" >
       
     </div>
-    <div class="col form-group">
-      
-      <textarea class="form-control" id="exampleTextarea" rows="3" cols="33"></textarea>
+    <div class="col-8 form-group">
+    <label for="message" class="form-label mt-4" hidden>message</label>
+      <textarea class="form-control" name="message" id="message" placeholder="Entrer votre message" rows="3" cols="33"></textarea>
     </div>
     
   </div>   
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
   </fieldset>
   
   </form>
