@@ -1,4 +1,4 @@
-<form>
+<form action="/" method="POST">
 <fieldset>
     
     <div class="row">
@@ -9,7 +9,7 @@
     </div>
     <div class="col-8 form-group">
     <label for="message" class="form-label mt-4" hidden>message</label>
-      <textarea class="form-control" name="message" id="message" placeholder="Entrer votre message" rows="3" cols="33"></textarea>
+      <textarea class="form-control" name="content" id="message" placeholder="Entrer votre message" rows="3" cols="33"></textarea>
     </div>
     
   </div>   
