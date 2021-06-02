@@ -2,7 +2,7 @@
 
 $user = "root";
 $pass = "";
-$dbname = "projet_chat";
+$dbname = "chat";
 $host = "localhost";
 
 try {
