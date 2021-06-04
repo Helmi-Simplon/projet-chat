@@ -15,6 +15,8 @@
 <?php
 require 'chatView.php';
 require 'formView.php';
+if(isset($_GET["id"]))
+require 'editView.php';
 ?>
 
   </div>
