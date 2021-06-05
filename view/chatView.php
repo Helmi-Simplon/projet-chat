@@ -7,7 +7,7 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($getAll as $row) { ?>
+        <?php foreach ($display as $row) { ?>
             <tr class="table-light">
 
                 <td class="col-2"><?php echo $row["date"] ?></th>
