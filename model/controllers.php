@@ -25,9 +25,8 @@ function postAdd()
 {
     try {
         require 'dbconnect.php';
-        
-        if ($_POST["pseudo"] != null && strlen($_POST["pseudo"]) > 1 &&$_POST["content"] != null)
-        {
+
+        if ($_POST["pseudo"] != null && strlen($_POST["pseudo"]) > 1 && $_POST["content"] != null) {
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $dbh->beginTransaction();
@@ -47,7 +46,7 @@ function postAdd()
 
 
 
-function postUpdate($pseudoUpdate,$contentUpdate)
+function postUpdate($pseudoUpdate, $contentUpdate)
 {
     try {
         require 'dbconnect.php';
@@ -63,6 +62,25 @@ function postUpdate($pseudoUpdate,$contentUpdate)
 
             die;
         }
+    } catch (PDOException $e) {
+
+        print "Erreur de requete!:" . $e->getMessage() . '<br>';
+        die;
+    }
+}
+
+
+function deleteOne()
+{
+    try {
+        require 'dbconnect.php';
+        $_GET["del"] = isset($_GET["del"]) ? $_GET["del"] : NULL;
+        $query = 'DELETE FROM message where id = :idval';
+
+        $req = $dbh->prepare($query);
+        $req->bindValue(':idval', $_GET["del"], PDO::PARAM_INT);
+        $req->execute();
+        header('Location: index.php');
     } catch (PDOException $e) {
 
         print "Erreur de requete!:" . $e->getMessage() . '<br>';
