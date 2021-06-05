@@ -1,4 +1,4 @@
-<<form action="index.php" method="POST">
+<form action="index.php" method="POST">
     <div>
 
         <input type="text" class="form-control" name="idUpdate" value="<?php echo htmlspecialchars($_GET["id"]) ?>" style="width:fit-content" hidden>
