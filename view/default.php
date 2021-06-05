@@ -25,6 +25,7 @@ if(isset($_GET["id"])){
   else{
   require 'chatView.php';
   require 'formView.php';
+  require 'paginationView.php';
   }
 
 
