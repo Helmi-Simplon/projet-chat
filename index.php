@@ -1,9 +1,8 @@
 <?php
 require 'model/controllers.php';
 
-
-$getAll = getAll();
-
+$display = displayTable();
+$pagination = pagination();
 
 if (isset($_POST["submit"])) {
 
