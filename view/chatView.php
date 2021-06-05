@@ -15,6 +15,7 @@
                 <td class="col-8"><?php echo ($row["content"]) ?></td>
 
                 <td class="col-2"> <a href="index.php?id=<?php echo $row["id"] . '&pseudo=' . $row["pseudo"] . '&content=' . $row["content"] ?>" role="button"><i class="fas fa-pen fa-xs" style="color:black;"></i></a></td>
+                <td class="col-2"> <a href="index.php?del=<?php echo $row["id"] ?>" role="button"><i class="fas fa-trash" style="color:black;"></i></a></td>
 
             </tr>
         <?php } ?>

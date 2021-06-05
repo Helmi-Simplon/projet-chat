@@ -15,5 +15,10 @@ elseif(isset($_POST["update"])){
     
     }
 
+elseif(isset($_GET["del"])){
+
+    $delete = deleteOne();
+}
+
 
 require 'view/default.php';
