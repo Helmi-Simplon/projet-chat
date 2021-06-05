@@ -2,18 +2,17 @@
 require 'model/controllers.php';
 
 
-    $getAll = getAll();
+$getAll = getAll();
 
 
-if(isset($_POST["submit"])){
+if (isset($_POST["submit"])) {
 
     $post = postAdd();
+} elseif (isset($_POST["update"])) {
+
+    $post = postUpdate($pseudoUpdate, $contentUpdate);
+} elseif (isset($_GET["del"])) {
+
+    $delete = deleteOne();
 }
-elseif(isset($_POST["update"])){
-
-    $post = postUpdate($pseudoUpdate,$contentUpdate);
-    
-    }
-
-
 require 'view/default.php';
