@@ -1,5 +1,19 @@
 <?php
-include 'model/controllers.php';
+require 'model/controllers.php';
 
-include 'view/default.php';
-?>
+
+    $getAll = getAll();
+
+
+if(isset($_POST["submit"])){
+
+    $post = postAdd();
+}
+elseif(isset($_POST["update"])){
+
+    $post = postUpdate($pseudoUpdate,$contentUpdate);
+    
+    }
+
+
+require 'view/default.php';
