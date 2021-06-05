@@ -100,3 +100,30 @@ function pagination(){
 
         return $line;
 }
+
+function paginationAll(){
+    try {
+        require 'dbconnect.php';
+        $num_page = num_page();
+        $query = 'SELECT * FROM message Limit 10 OFFSET ' .$num_page;
+
+        $req = $dbh->query($query);
+        $req->setFetchMode(PDO::FETCH_ASSOC);
+        $tab = $req->fetchAll();
+        $req->closeCursor();
+        return $tab;
+    } catch (PDOException $e) {
+
+        print "Erreur de requete!:" . $e->getMessage() . '<br>';
+        die;
+    }
+}
+
+// Le résultat de cette fonction sera utilisé dans la fonction paginationAll()
+
+function num_page(){
+    require 'dbconnect.php';
+        $_GET["page"] = isset($_GET["page"])?$_GET["page"]:NULL;
+        $display= ($_GET["page"] - 1)*10;
+        return $display;
+}
