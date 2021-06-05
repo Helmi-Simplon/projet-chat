@@ -1,5 +1,5 @@
-<table class="table table-hover">
-<thead>
+<table class="table table-hover" style="margin-top: 50px;">
+    <thead>
         <tr>
             <th scope="col-2" hidden>DATE</th>
             <th scope="col-2" hidden>PSEUDO</th>
@@ -7,11 +7,14 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($tab as $row) { ?>
+        <?php foreach ($getAll as $row) { ?>
             <tr class="table-light">
-                <td class="col-2"><?php echo htmlspecialchars($row["date"])?></th>
-                <td class="col-2"><?php echo htmlspecialchars($row["pseudo"]) ?></td>
-                <td class="col-8"><?php echo htmlspecialchars($row["content"]) ?></td>
+
+                <td class="col-2"><?php echo $row["date"] ?></th>
+                <td class="col-2"><?php echo ($row["pseudo"]) ?></td>
+                <td class="col-8"><?php echo ($row["content"]) ?></td>
+
+                <td class="col-2"> <a href="index.php?id=<?php echo $row["id"] . '&pseudo=' . $row["pseudo"] . '&content=' . $row["content"] ?>" role="button"><i class="fas fa-pen fa-xs" style="color:black;"></i></a></td>
 
             </tr>
         <?php } ?>
