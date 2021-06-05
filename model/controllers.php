@@ -87,3 +87,58 @@ function deleteOne()
         die;
     }
 }
+
+function pagination(){
+    require 'dbconnect.php';
+
+    $query = 'SELECT ceil(count(*)/10) as total_page FROM message';
+
+        $req = $dbh->query($query);
+        $req->setFetchMode(PDO::FETCH_ASSOC);
+        $line = $req->fetch();
+        $req->closeCursor();
+
+        return $line;
+}
+
+function paginationAll(){
+    try {
+        require 'dbconnect.php';
+        $num_page = num_page();
+        $query = 'SELECT * FROM message Limit 10 OFFSET ' .$num_page;
+
+        $req = $dbh->query($query);
+        $req->setFetchMode(PDO::FETCH_ASSOC);
+        $tab = $req->fetchAll();
+        $req->closeCursor();
+        return $tab;
+    } catch (PDOException $e) {
+
+        print "Erreur de requete!:" . $e->getMessage() . '<br>';
+        die;
+    }
+}
+
+// Le résultat de cette fonction sera utilisé dans la fonction paginationAll()
+
+function num_page(){
+    require 'dbconnect.php';
+        $_GET["page"] = isset($_GET["page"])?$_GET["page"]:NULL;
+        $display= ($_GET["page"] - 1)*10;
+        return $display;
+}
+
+
+function displayTable(){
+    $_GET["page"]=isset($_GET["page"])?$_GET["page"]:NULL;
+    if(!isset($_GET["page"])){
+
+        $getAll= getAll();
+        
+    }else{
+        
+        $getAll = paginationAll();
+         
+    }
+    return $getAll;
+}
