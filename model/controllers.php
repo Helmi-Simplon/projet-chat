@@ -127,3 +127,18 @@ function num_page(){
         $display= ($_GET["page"] - 1)*10;
         return $display;
 }
+
+
+function displayTable(){
+    $_GET["page"]=isset($_GET["page"])?$_GET["page"]:NULL;
+    if(!isset($_GET["page"])){
+
+        $getAll= getAll();
+        
+    }else{
+        
+        $getAll = paginationAll();
+         
+    }
+    return $getAll;
+}
