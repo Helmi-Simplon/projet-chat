@@ -1,14 +1,19 @@
-<form action="index.php" method="POST">
+<<form action="index.php" method="POST">
     <div>
-        <input type="text" name="idUpdate" value="<?php echo htmlspecialchars($_GET["id"]) ?>" hidden>
+
+        <input type="text" class="form-control" name="idUpdate" value="<?php echo htmlspecialchars($_GET["id"]) ?>" style="width:fit-content" hidden>
     </div>
     <div>
-        <input type="text" name="pseudoUpdate" value="<?php echo htmlspecialchars($_GET["pseudo"]) ?>">
+        <label for="pseudoUpdate">Pseudo</label>
+        <input type="text" class="form-control" name="pseudoUpdate" value="<?php echo htmlspecialchars($_GET["pseudo"]) ?>" style="width:fit-content">
     </div>
     <div>
-        <textarea name="contentUpdate" cols="30" rows="10"><?php echo htmlspecialchars($_GET["content"]) ?></textarea>
+        <label for="contentUpdate">Message</label>
+        <textarea class="form-control" name="contentUpdate" cols="30" rows="10" style=""><?php echo htmlspecialchars($_GET["content"]) ?></textarea>
     </div>
     <div>
-        <input type="submit" name="update" value="Envoyer">
+        <input type="submit" name="update" value="Mettre à jour" class="btn n">
+        
     </div>
 </form>
+
