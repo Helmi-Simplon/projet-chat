@@ -87,3 +87,16 @@ function deleteOne()
         die;
     }
 }
+
+function pagination(){
+    require 'dbconnect.php';
+
+    $query = 'SELECT ceil(count(*)/10) as total_page FROM message';
+
+        $req = $dbh->query($query);
+        $req->setFetchMode(PDO::FETCH_ASSOC);
+        $line = $req->fetch();
+        $req->closeCursor();
+
+        return $line;
+}
